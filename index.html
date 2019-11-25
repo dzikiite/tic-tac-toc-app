@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link href="css/normalize.css" rel="stylesheet">
   <link href="css/player-choice.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/game.css">
 
 </head>
 
@@ -26,18 +27,18 @@
       <div class="player-choice">
         <div>
           <label>player 1 nickname
-            <input type="text">
+            <input type="text" id="player1">
           </label>
-          <select>
+          <select id="player1">
             <option value="circle">circle</option>
             <option value="sharp">sharp</option>
           </select>
         </div>
         <div>
           <label>player 2 nickname
-            <input type="text">
+            <input type="text" id="player2">
           </label>
-          <select>
+          <select id="player2">
             <option value="circle">circle</option>
             <option value="sharp">sharp</option>
           </select>
@@ -49,8 +50,12 @@
       <i class="fas fa-level-down-alt"></i>
     </div>
   </div>
+  <div class="game">
 
-  <script src="js/script.js"></script>
+  </div>
+
+  <script src="js/modules/PlayerData.js"></script>
+  <script src="js/modules/App.js"></script>
 </body>
 
 </html>

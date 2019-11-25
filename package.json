@@ -6,7 +6,8 @@
   "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "eslint": "^6.7.0"
+    "eslint": "^6.7.0",
+    "webpack": "^4.41.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
