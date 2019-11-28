@@ -222,6 +222,16 @@ body {
   width: 200px;
   height: 200px;
   cursor: pointer;
+  font-size: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .playground__item:hover {
@@ -244,5 +254,89 @@ body {
 
 .popup {
   display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Raleway", sans-serif;
+}
+
+.popup__container {
+  min-width: 40vw;
+  min-height: 60vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+}
+
+.popup__info {
+  font-size: 40px;
+}
+
+.popup__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  height: 40px;
+  background: linear-gradient(135deg, #55efcb 0%, #1e5799 0%, #55efcb 0%, #5bcaff 100%);
+  margin: 15px 0;
+}
+
+.popup__submit-button {
+  font-family: "Raleway", sans-serif;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: linear-gradient(135deg, #55efcb 0%, #1e5799 0%, #55efcb 0%, #5bcaff 100%);
+  color: #f7f7f7;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background-color .5s ease, color .5s ease;
+  transition: background-color .5s ease, color .5s ease;
+}
+
+.popup__submit-button:hover {
+  background: none;
+  background-color: white;
+  color: #29b6a8;
+}
+
+.popup__exit {
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
