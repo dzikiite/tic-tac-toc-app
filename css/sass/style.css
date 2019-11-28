@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -6,6 +8,7 @@
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -25,6 +28,15 @@ body {
   position: fixed;
   top: 5%;
   left: 2%;
+}
+
+.pattern {
+  position: absolute;
+  right: -8%;
+  bottom: -10%;
+  opacity: .8;
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
 }
 
 .data {
@@ -147,5 +159,90 @@ body {
   background: none;
   background-color: white;
   color: #29b6a8;
+}
+
+.game {
+  height: 100vh;
+  background: linear-gradient(135deg, #55efcb 0%, #1e5799 0%, #55efcb 0%, #5bcaff 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stats {
+  font-family: "Raleway", sans-serif;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 2px solid black;
+}
+
+.stats__title {
+  font-size: 60px;
+  text-decoration: underline;
+}
+
+.playground {
+  font-family: "Raleway", sans-serif;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playground__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+}
+
+.playground__item {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.playground__item:hover {
+  background: linear-gradient(135deg, #55efcb 0%, #1e5799 0%, #55efcb 0%, #5bcaff 100%);
+}
+
+.playground__item:nth-child(2), .playground__item:nth-child(8) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.playground__item:nth-child(4), .playground__item:nth-child(6) {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.playground__item:nth-child(5) {
+  border: 2px solid black;
+}
+
+.popup {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

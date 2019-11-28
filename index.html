@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>ticTacTocApp</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
   <link href="css/sass/style.css" rel="stylesheet">
 </head>
 
@@ -44,9 +46,36 @@
         <button type="submit" class="form__submit-button">let's play</button>
       </div>
     </div>
+    <div class="pattern">
+      <img src="assets/pattern.png" alt="pattern" class="pattern__img">
+    </div>
   </div>
   <div class="game">
-
+    <div class="stats">
+      <h3 class="stats__title"><i class="fas fa-poll"></i></h3>
+      <p class="stats__win">player 1:</p>
+      <p class="stats__win">draws:</p>
+      <p class="stats__win">player 2:</p>
+    </div>
+    <div class="playground">
+      <div class="playground__container">
+        <div class="playground__item" key="1"></div>
+        <div class="playground__item" key="2"></div>
+        <div class="playground__item" key="3"></div>
+        <div class="playground__item" key="4"></div>
+        <div class="playground__item" key="5"></div>
+        <div class="playground__item" key="6"></div>
+        <div class="playground__item" key="7"></div>
+        <div class="playground__item" key="8"></div>
+        <div class="playground__item" key="9"></div>
+      </div>
+    </div>
+    <div class="popup">
+      <h2 class="popup__info">good job! player 1 won!</h2>
+      <div class="popup__submit">
+        <button class="popup__submit-button">play again</button>
+      </div>
+    </div>
   </div>
 
   <script src="js/modules/PlayerData.js"></script>
