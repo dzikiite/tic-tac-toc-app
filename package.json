@@ -5,11 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "eslint": "^6.7.0"
+    "eslint": "^6.7.0",
+    "webpack": "^4.41.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8000"
   },
   "repository": {
     "type": "git",

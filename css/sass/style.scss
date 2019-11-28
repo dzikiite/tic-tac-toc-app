@@ -1,0 +1,122 @@
+// Variables
+
+$font-family: 'Raleway', sans-serif;
+$background: #fff;
+$title-color: #000;
+$gray-color: #636363;
+$turqoise: rgb(9, 226, 241);
+$gradient-color: linear-gradient(135deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 100%);
+
+// Reset
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+// Data Container 
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Logo Area
+
+.logo {
+    position: fixed;
+    top: 5%;
+    left: 2%;
+}
+
+// Data Form
+
+.data {
+    min-width: 40vw;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #000;
+    box-shadow: 0px 1px 9px -1px rgba(61,61,61,0.61);
+
+    &__info {
+        text-align: center;
+        font-family: $font-family;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: $font-family;
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__input {
+        display: block;
+        border: none;
+        border-bottom: 2px solid $gray-color;
+        margin: 10px 0;
+        outline: none;
+    }
+
+    &__input::placeholder {
+        font-family: $font-family;
+    }
+
+    &__input:focus {
+        border-bottom: 2px solid $turqoise;
+    }
+
+    &__select {
+        display: block;
+        height: 30px;
+        font-family: $font-family;
+        border: 1px solid $gray-color;
+        outline: none;
+    }
+
+    &__submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 40px;
+        background: linear-gradient(135deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 100%);
+    }
+
+    &__submit-button {
+        font-family: $font-family;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        background: linear-gradient(135deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 100%);
+        color: #f7f7f7;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color .5s ease, color .5s ease;
+    }
+
+    &__submit-button:hover {
+        background: none;
+        background-color: white;
+        color: rgb(41, 182, 168);
+    }
+}

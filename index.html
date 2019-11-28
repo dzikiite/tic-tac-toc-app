@@ -7,50 +7,50 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>ticTacTocApp</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/player-choice.css" rel="stylesheet">
-
+  <link href="css/sass/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="logo-wrapper">
-    <img src="assets/project-mi-png-146x25.png" alt="logo-idzikowski">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/project-mi-png-146x25.png" alt="logo-idzikowski">
+    </div>
+    <div class="data">
+      <div class="data__info">
+        <h1 class="data__title">ticTacTocApp</h1>
+        <p class="data__paragraph">Hello guys, if u want to play set your name and side</p>
+      </div>
+      <div class="form">
+        <div class="form__item">
+          <label class="form__input-label">player 1 nickname
+            <input type="text" class="form__input" placeholder="name...">
+          </label>
+          <select class="form__select">
+            <option value="circle" class="form__select-option">circle</option>
+            <option value="sharp" class="form__select-option">sharp</option>
+          </select>
+        </div>
+        <div class="form__item">
+          <label class="form__input-label">player 2 nickname
+            <input type="text" class="form__input" placeholder="name...">
+          </label>
+          <select class="form__select">
+            <option value="circle" class="form__select-option">circle</option>
+            <option value="sharp" class="form__select-option">sharp</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__submit">
+        <button type="submit" class="form__submit-button">let's play</button>
+      </div>
+    </div>
   </div>
-  <div class="player-choice-wrapper">
-    <div class="main-wrapper">
-      <div class="hero-wrapper">
-        <h1>ticTacTocApp</h1>
-        <h3>Hello guys, if u want to play set your name and side</h3>
-      </div>
-      <div class="player-choice">
-        <div>
-          <label>player 1 nickname
-            <input type="text">
-          </label>
-          <select>
-            <option value="circle">circle</option>
-            <option value="sharp">sharp</option>
-          </select>
-        </div>
-        <div>
-          <label>player 2 nickname
-            <input type="text">
-          </label>
-          <select>
-            <option value="circle">circle</option>
-            <option value="sharp">sharp</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="start">let's play</button>
-    </div>
-    <div class="nav-arrow">
-      <i class="fas fa-level-down-alt"></i>
-    </div>
+  <div class="game">
+
   </div>
 
-  <script src="js/script.js"></script>
+  <script src="js/modules/PlayerData.js"></script>
+  <script src="js/modules/App.js"></script>
 </body>
 
 </html>
