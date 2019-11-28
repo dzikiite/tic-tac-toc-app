@@ -1,25 +1,36 @@
-const player1Name = document.querySelector('.form__input--player1');
-const player2Name = document.querySelector('.form__input--player2');
-const player1Side = document.querySelector('.form__select--player1');
-const player2Side = document.querySelector('.form__select--player2');
-const startBtn = document.querySelector('.form__submit-button');
+
 
 class App {
     constructor() {
 
-        this.scrollToGame = () => {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth',
-            });
-        }
+        this.player1Name = document.querySelector('.form__input--player1');
+        this.player2Name = document.querySelector('.form__input--player2');
+        this.player1Side = document.querySelector('.form__select--player1');
+        this.player2Side = document.querySelector('.form__select--player2');
+        this.startBtn = document.querySelector('.form__submit-button');
+        this.playgroundFields = document.querySelectorAll('.playground__item');
+        this.statsFields = document.querySelectorAll('.stats__field');
 
-        this.fetchPlayerData = () => {
-            const playerData = new PlayerData(player1Name.value, player2Name.value, player1Side.value, player2Side.value);
-        }
+
+        this.startBtn.addEventListener('click', this.startGame.bind(this));
+
+        this.that = this;
+    }
+
+    render() {
+
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth',
+        });
+
+    }
+
+    startGame() {
+        const playerData = new PlayerData(this.player1Name.value, this.player2Name.value, this.player1Side.value, this.player2Side.value);
+        console.log(this);
+        playerData.getPlayerData(1);
     }
 }
 
 const app = new App();
-
-startBtn.addEventListener('click', app.scrollToGame);
