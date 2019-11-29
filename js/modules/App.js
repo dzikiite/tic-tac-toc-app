@@ -13,13 +13,16 @@ class App {
         this.results = new Results(this.statsFields, 0);
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
-        this.player1Side.addEventListener('change', function() {
-            
-            this.player2Side.options[this.player1Side.selectedIndex].remove();
-        }.bind(this))
+        
     }
 
     render() {
+
+        const playerData = new PlayerData(this.player1Name.value, this.player2Name.value, this.player1Side.value, this.player2Side.value);
+        let controler = playerData.validatePlayerSide(this.player1Side, this.player2Side);
+        if (!controler) {
+            return;
+        }
 
         window.scrollTo({
             top: window.innerHeight,

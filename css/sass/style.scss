@@ -106,6 +106,10 @@ body {
         outline: none;
     }
 
+    &__select--validate {
+        border: 1px solid rgb(190, 33, 33);
+    }
+
     &__submit {
         display: flex;
         justify-content: center;
@@ -160,6 +164,10 @@ body {
 
     &__field {
         font-weight: 600;
+    }
+
+    &__field--span {
+        font-size: 22px;
     }
 }
 

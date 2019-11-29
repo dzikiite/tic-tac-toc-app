@@ -7,7 +7,16 @@ class PlayerData {
         this.choicePlayer2 = choicePlayer2;
     }
 
-    getPlayerData(playerNumber) {
-        
+    validatePlayerSide(playerOneSide, playerTwoSide) {
+        if (playerOneSide.options[playerOneSide.selectedIndex].value == playerTwoSide.options[playerTwoSide.selectedIndex].value) {
+            playerOneSide.classList.add('form__select--validate');
+            playerTwoSide.classList.add('form__select--validate');
+            return false;
+        }
+        else {
+            playerOneSide.classList.remove('form__select--validate');
+            playerTwoSide.classList.remove('form__select--validate');
+            return true;
+        }
     }
 }

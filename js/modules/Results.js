@@ -7,11 +7,15 @@ class Results {
     setPlayerName(statsFields, playerOne, playerTwo) {
         statsFields.forEach((field) => {
             if (field.dataset.id == 'player1') {
-                field.textContent = `${playerOne}:`;
+                field.textContent = `${playerOne} wins:`;
             }
             else if (field.dataset.id == 'player2') {
-                field.textContent = `${playerTwo}:`;
+                field.textContent = `${playerTwo} wins:`;
             }
         })
+    }
+
+    setResult(result) {
+        
     }
 }

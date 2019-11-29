@@ -125,6 +125,10 @@ body {
   outline: none;
 }
 
+.form__select--validate {
+  border: 1px solid #be2121;
+}
+
 .form__submit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,6 +200,10 @@ body {
 
 .stats__field {
   font-weight: 600;
+}
+
+.stats__field--span {
+  font-size: 22px;
 }
 
 .playground {
