@@ -11,6 +11,7 @@ class App {
         this.playgroundFields = document.querySelectorAll('.playground__item');
         this.statsFields = document.querySelectorAll('.stats__field');
         this.results = new Results(this.statsFields, 0);
+        this.game = new Game();
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
         
@@ -35,5 +36,8 @@ class App {
         this.render();
         const playerData = new PlayerData(this.player1Name.value, this.player2Name.value, this.player1Side.value, this.player2Side.value);
         this.results.setPlayerName(this.statsFields, playerData.playerName1, playerData.playerName2);
+        this.playgroundFields.forEach(field => {
+            field.addEventListener('click', () => {this.game.handleClick(field)}); 
+        })
     }
 }
