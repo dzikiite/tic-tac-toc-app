@@ -10,11 +10,13 @@ class App {
         this.startBtn = document.querySelector('.form__submit-button');
         this.playgroundFields = document.querySelectorAll('.playground__item');
         this.statsFields = document.querySelectorAll('.stats__field');
-
+        this.results = new Results(this.statsFields, 0);
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
-
-        this.that = this;
+        this.player1Side.addEventListener('change', function() {
+            
+            this.player2Side.options[this.player1Side.selectedIndex].remove();
+        }.bind(this))
     }
 
     render() {
@@ -27,10 +29,8 @@ class App {
     }
 
     startGame() {
+        this.render();
         const playerData = new PlayerData(this.player1Name.value, this.player2Name.value, this.player1Side.value, this.player2Side.value);
-        console.log(this);
-        playerData.getPlayerData(1);
+        this.results.setPlayerName(this.statsFields, playerData.playerName1, playerData.playerName2);
     }
 }
-
-const app = new App();

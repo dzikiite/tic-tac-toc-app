@@ -194,6 +194,10 @@ body {
   text-decoration: underline;
 }
 
+.stats__field {
+  font-weight: 600;
+}
+
 .playground {
   font-family: "Raleway", sans-serif;
   -ms-flex-preferred-size: 80%;

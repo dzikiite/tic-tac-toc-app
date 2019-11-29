@@ -8,16 +8,6 @@ class PlayerData {
     }
 
     getPlayerData(playerNumber) {
-    //     if (playerNumber == 0) {
-    //         return [this.playerName1, this.choicePlayer1]
-    //     }
-    //     else if (playerNumber == 1) {
-    //         return [this.playerName2, this.choicePlayer2]
-    //     }
-    //     else {
-    //         console.log('błędne dane')
-    //     }
-    // }
-    console.log(playerNumber, this.playerName1);
+        
     }
 }
