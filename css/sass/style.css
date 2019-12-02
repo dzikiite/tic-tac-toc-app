@@ -117,6 +117,10 @@ body {
   border-bottom: 2px solid #09e2f1;
 }
 
+.form__input--validate {
+  border-bottom: 2px solid #be2121;
+}
+
 .form__select {
   display: block;
   height: 30px;
@@ -127,6 +131,13 @@ body {
 
 .form__select--validate {
   border: 1px solid #be2121;
+}
+
+.form__validate--paragraph {
+  display: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  color: #be2121;
 }
 
 .form__submit {
