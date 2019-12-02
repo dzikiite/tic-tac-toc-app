@@ -42,6 +42,7 @@ class App {
         this.render();
         const playerData = new PlayerData(this.player1Name.value, this.player2Name.value, this.player1Side.value, this.player2Side.value);
         this.results.setPlayerName(this.statsFields, playerData.playerName1, playerData.playerName2);
+        this.game.setQueue(this.playgroundQueue, this.game.sideControler);
         this.playgroundFields.forEach(field => {
             field.addEventListener('click', () => { this.game.handleClick(field) });
         })
