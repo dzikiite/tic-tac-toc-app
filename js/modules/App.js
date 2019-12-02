@@ -9,10 +9,11 @@ class App {
         this.player2Side = document.querySelector('.form__select--player2');
         this.startBtn = document.querySelector('.form__submit-button');
         this.validateInfo = document.querySelector('.form__validate--paragraph');
+        this.playgroundQueue = document.querySelector('.playground__queue');
         this.playgroundFields = document.querySelectorAll('.playground__item');
         this.statsFields = document.querySelectorAll('.stats__field');
         this.results = new Results(this.statsFields, 0);
-        this.game = new Game();
+        this.game = new Game(this.playgroundQueue);
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
 

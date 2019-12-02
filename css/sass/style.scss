@@ -188,11 +188,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    &__queue {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        font-weight: 600;
     }
     
     &__item {
