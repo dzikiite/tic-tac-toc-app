@@ -44,7 +44,7 @@ class App {
         this.results.setPlayerName(this.statsFields, playerData.playerName1, playerData.playerName2);
         this.game.setQueue(this.playgroundQueue, this.game.sideControler);
         this.playgroundFields.forEach(field => {
-            field.addEventListener('click', () => { this.game.handleClick(field) });
+            field.addEventListener('click', () => { this.game.getWinner(field) });
         })
     }
 }

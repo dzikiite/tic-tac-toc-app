@@ -19,28 +19,46 @@ class Game {
         }
     }
 
-    handleClick(field) {
+    getWinner(field) {
         if (field.innerHTML == '') {
             if (!this.sideControler) {
                 field.innerHTML = '<i class="far fa-circle"></i>';
                 this.sideControler = !this.sideControler;
                 this.playerOneMoves.push(field.dataset.key);
-                console.log(this.playerOneMoves);
-                console.log(this.sideControler);
-                console.log(field);
             }
             else if (this.sideControler) {
                 field.innerHTML = '<i class="fas fa-times"></i>';
                 this.sideControler = !this.sideControler;
                 this.playerTwoMoves.push(field.dataset.key);
-                console.log(this.playerTwoMoves);
-                console.log(this.sideControler);
-                console.log(field);
             }
         }
-        this.setQueue(this.playgroundQueue, this.sideControler);
-        this.playerOneMoves.forEach(move => {
 
-        })
+        this.setQueue(this.playgroundQueue, this.sideControler);
+
+        this.winCombinations.sort();
+        this.playerOneMoves.sort();
+        this.playerTwoMoves.sort();
+
+
+        let checkWinner = () => {
+            this.winCombinations.sort();
+            this.playerOneMoves.sort();
+            this.playerTwoMoves.sort();
+            let i, j;
+            for (i = 0, j = 0; i < this.playerOneMoves.length && j < this.winCombinations[0].length;) {
+                if (this.playerOneMoves[i] < this.winCombinations[0][j]) {
+                    ++i;
+                    console.log(this.winCombinations[0][j]);
+                } else if (this.playerOneMoves[i] == this.winCombinations[0][j]) {
+                    ++i; ++j;
+                } else {
+                    return false;
+                }
+            }
+            console.log(j == this.winCombinations[0].length)
+            return j == this.winCombinations[0].length;
+
+        }
+
     }
 }
