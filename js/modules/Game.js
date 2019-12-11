@@ -7,7 +7,7 @@ class Game {
         ]
         this.playerOneMoves = [];
         this.playerTwoMoves = [];
-        this.counter = 0;
+        this.gameResult = '';
     }
 
     setQueue(playgroundQueue, sideControler) {
@@ -42,10 +42,10 @@ class Game {
             this.winCombinations.forEach(combination => {
                 let winChecker = combination.every(element => this.playerOneMoves.indexOf(element) > -1);
                 if (winChecker) {
-                    return 'player1';
+                    this.gameResult = 'player1';
                 }
                 else {
-                    return 'draw';
+                    this.gameResult = 'draw';
                 }
             })
         }
@@ -54,10 +54,10 @@ class Game {
             this.winCombinations.forEach(combination => {
                 let winChecker = combination.every(element => this.playerTwoMoves.indexOf(element) > -1);
                 if (winChecker) {
-                    return 'player2';
+                    this.gameResult = 'player2';
                 }
                 else {
-                    return 'draw';
+                    this.gameResult = 'draw';
                 }
             })
         }
@@ -67,5 +67,6 @@ class Game {
         this.setMark(field);
         this.setQueue(this.playgroundQueue, this.sideControler);
         this.getWinner();
+        console.log(this.gameResult);
     }
 }
