@@ -7,6 +7,7 @@ class Game {
         ]
         this.playerOneMoves = [];
         this.playerTwoMoves = [];
+        this.counter = 0;
     }
 
     setQueue(playgroundQueue, sideControler) {
@@ -19,46 +20,52 @@ class Game {
         }
     }
 
-    getWinner(field) {
+    setMark(field) {
         if (field.innerHTML == '') {
             if (!this.sideControler) {
                 field.innerHTML = '<i class="far fa-circle"></i>';
                 this.sideControler = !this.sideControler;
-                this.playerOneMoves.push(field.dataset.key);
+                this.playerOneMoves.push(parseInt(field.dataset.key));
             }
             else if (this.sideControler) {
                 field.innerHTML = '<i class="fas fa-times"></i>';
                 this.sideControler = !this.sideControler;
-                this.playerTwoMoves.push(field.dataset.key);
+                this.playerTwoMoves.push(parseInt(field.dataset.key));
             }
         }
 
         this.setQueue(this.playgroundQueue, this.sideControler);
+    }
 
-        this.winCombinations.sort();
-        this.playerOneMoves.sort();
-        this.playerTwoMoves.sort();
-
-
-        let checkWinner = () => {
-            this.winCombinations.sort();
-            this.playerOneMoves.sort();
-            this.playerTwoMoves.sort();
-            let i, j;
-            for (i = 0, j = 0; i < this.playerOneMoves.length && j < this.winCombinations[0].length;) {
-                if (this.playerOneMoves[i] < this.winCombinations[0][j]) {
-                    ++i;
-                    console.log(this.winCombinations[0][j]);
-                } else if (this.playerOneMoves[i] == this.winCombinations[0][j]) {
-                    ++i; ++j;
-                } else {
-                    return false;
+    getWinner() {
+        if (this.sideControler) {
+            this.winCombinations.forEach(combination => {
+                let winChecker = combination.every(element => this.playerOneMoves.indexOf(element) > -1);
+                if (winChecker) {
+                    return 'player1';
                 }
-            }
-            console.log(j == this.winCombinations[0].length)
-            return j == this.winCombinations[0].length;
-
+                else {
+                    return 'draw';
+                }
+            })
         }
 
+        if (!this.sideControler) {
+            this.winCombinations.forEach(combination => {
+                let winChecker = combination.every(element => this.playerTwoMoves.indexOf(element) > -1);
+                if (winChecker) {
+                    return 'player2';
+                }
+                else {
+                    return 'draw';
+                }
+            })
+        }
+    }
+
+    gameControler(field) {
+        this.setMark(field);
+        this.setQueue(this.playgroundQueue, this.sideControler);
+        this.getWinner();
     }
 }
