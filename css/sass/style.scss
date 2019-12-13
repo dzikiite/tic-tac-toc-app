@@ -167,6 +167,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 2px solid black;
+    background-color: #ffffff;
 
     &__title {
         font-size: 60px;
@@ -214,7 +215,7 @@ body {
     }
 
     &__item:hover {
-        background: $gradient-color;
+        // background: $gradient-color;
     }
 
     &__item:nth-child(2), &__item:nth-child(8) {

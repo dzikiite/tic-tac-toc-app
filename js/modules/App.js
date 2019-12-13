@@ -1,5 +1,3 @@
-
-
 class App {
     constructor() {
 
@@ -12,11 +10,16 @@ class App {
         this.playgroundQueue = document.querySelector('.playground__queue');
         this.playgroundFields = document.querySelectorAll('.playground__item');
         this.statsFields = document.querySelectorAll('.stats__field');
-        this.results = new Results(this.statsFields, 0);
+        this.popup = document.querySelector('.popup');
+        this.popupExit = document.querySelector('.popup__exit');
+        this.winInfo = document.querySelector('.popup__info');
+        this.playAgainBtn = document.querySelector('.popup__submit-button');
         this.game = new Game(this.playgroundQueue);
+        this.results = new Results(this.statsFields, this.game.gameResult);
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
-
+        this.popupExit.addEventListener('click', () => { this.popup.style.display = 'none'; });
+        this.playAgainBtn.addEventListener('click', () => { this.popup.style.display = 'none'; });
     }
 
     render() {
@@ -44,7 +47,11 @@ class App {
         this.results.setPlayerName(this.statsFields, playerData.playerName1, playerData.playerName2);
         this.game.setQueue(this.playgroundQueue, this.game.sideControler);
         this.playgroundFields.forEach(field => {
-            field.addEventListener('click', () => { this.game.gameControler(field) });
-        })
+            field.addEventListener('click', () => {
+                this.game.gameControler(field);
+                this.results.setPlayerResult(this.game.gameResult, this.statsFields);
+                this.results.showResultPopup(this.game.gameResult, this.popup, this.winInfo, playerData.playerName1, playerData.playerName2);
+            });
+        });
     }
 }

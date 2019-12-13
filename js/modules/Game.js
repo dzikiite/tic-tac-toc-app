@@ -44,7 +44,7 @@ class Game {
                 if (winChecker) {
                     this.gameResult = 'player1';
                 }
-                else {
+                else if (this.playerOneMoves.length == 5) {
                     this.gameResult = 'draw';
                 }
             })
@@ -56,7 +56,7 @@ class Game {
                 if (winChecker) {
                     this.gameResult = 'player2';
                 }
-                else {
+                else if (this.playerTwoMoves.length == 5) {
                     this.gameResult = 'draw';
                 }
             })
@@ -67,6 +67,5 @@ class Game {
         this.setMark(field);
         this.setQueue(this.playgroundQueue, this.sideControler);
         this.getWinner();
-        console.log(this.gameResult);
     }
 }
