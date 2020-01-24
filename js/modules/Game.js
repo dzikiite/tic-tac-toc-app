@@ -41,6 +41,8 @@ class Game {
         if (this.sideControler) {
             this.winCombinations.forEach(combination => {
                 let winChecker = combination.every(element => this.playerOneMoves.indexOf(element) > -1);
+                console.log('player1');
+                console.log(winChecker);
                 if (winChecker) {
                     this.gameResult = 'player1';
                 }
@@ -53,14 +55,27 @@ class Game {
         if (!this.sideControler) {
             this.winCombinations.forEach(combination => {
                 let winChecker = combination.every(element => this.playerTwoMoves.indexOf(element) > -1);
+                console.log('player2');
+                console.log(winChecker);
                 if (winChecker) {
                     this.gameResult = 'player2';
                 }
                 else if (this.playerTwoMoves.length == 5) {
                     this.gameResult = 'draw';
                 }
+                winChecker = false;
             })
         }
+    }
+
+    clsBoard(playgroundFields) {
+        playgroundFields.forEach(field => {
+            field.innerHTML = '';
+        })
+        this.playerOneMoves = [];
+        this.playerTwoMoves = [];
+        this.sideControler = false;
+        this.gameResult = '';
     }
 
     gameControler(field) {

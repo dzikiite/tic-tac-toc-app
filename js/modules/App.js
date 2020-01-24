@@ -10,6 +10,7 @@ class App {
         this.playgroundQueue = document.querySelector('.playground__queue');
         this.playgroundFields = document.querySelectorAll('.playground__item');
         this.statsFields = document.querySelectorAll('.stats__field');
+        this.pattern = document.querySelector('.pattern');
         this.popup = document.querySelector('.popup');
         this.popupExit = document.querySelector('.popup__exit');
         this.winInfo = document.querySelector('.popup__info');
@@ -18,8 +19,14 @@ class App {
         this.results = new Results(this.statsFields, this.game.gameResult);
 
         this.startBtn.addEventListener('click', this.startGame.bind(this));
-        this.popupExit.addEventListener('click', () => { this.popup.style.display = 'none'; });
-        this.playAgainBtn.addEventListener('click', () => { this.popup.style.display = 'none'; });
+        this.popupExit.addEventListener('click', () => {
+            this.popup.style.display = 'none';
+            this.game.clsBoard(this.playgroundFields);
+        });
+        this.playAgainBtn.addEventListener('click', () => {
+            this.popup.style.display = 'none';
+            this.game.clsBoard(this.playgroundFields);
+        });
     }
 
     render() {
@@ -33,6 +40,8 @@ class App {
         if (!controlerName) {
             return;
         }
+
+        this.pattern.classList.add('pattern--hide');
 
         window.scrollTo({
             top: window.innerHeight,

@@ -48,6 +48,16 @@ body {
     bottom: -10%;
     opacity: .8;
     transform: rotate(55deg);
+    z-index: 20;
+}
+
+.pattern--hide {
+    animation: hide .2s ease forwards;
+}
+
+@keyframes hide {
+    from {opacity: .8;}
+    to {opacity: 0;}
 }
 
 // Data Form
@@ -157,6 +167,7 @@ body {
     height: 100vh;
     background: $gradient-color;
     display: flex;
+    z-index: 21;
 }
 
 .stats {

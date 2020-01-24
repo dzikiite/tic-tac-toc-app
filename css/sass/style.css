@@ -37,6 +37,30 @@ body {
   opacity: .8;
   -webkit-transform: rotate(55deg);
           transform: rotate(55deg);
+  z-index: 20;
+}
+
+.pattern--hide {
+  -webkit-animation: hide .2s ease forwards;
+          animation: hide .2s ease forwards;
+}
+
+@-webkit-keyframes hide {
+  from {
+    opacity: .8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: .8;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .data {
@@ -182,6 +206,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 21;
 }
 
 .stats {
