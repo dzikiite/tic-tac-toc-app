@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ticTacToeApp</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+  <link href="css/sass/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/project-mi-png-146x25.png" alt="logo-idzikowski">
+    </div>
+    <div class="data">
+      <div class="data__info">
+        <h1 class="data__title">ticTacToeApp</h1>
+        <p class="data__paragraph">Hello guys, if u want to play set your name and side</p>
+      </div>
+      <div class="form">
+        <div class="form__item">
+          <label class="form__input-label">player 1 nickname
+            <input type="text" class="form__input form__input--player1" placeholder="name...">
+          </label>
+          <select class="form__select form__select--player1">
+            <option value="circle" class="form__select-option">circle</option>
+            <option value="sharp" class="form__select-option">sharp</option>
+          </select>
+        </div>
+        <div class="form__item">
+          <label class="form__input-label">player 2 nickname
+            <input type="text" class="form__input form__input--player2" placeholder="name...">
+          </label>
+          <select class="form__select form__select--player2">
+            <option value="circle" class="form__select-option">circle</option>
+            <option value="sharp" class="form__select-option">sharp</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__validate">
+        <p class="form__validate--paragraph">* correct the mistakes</p>
+      </div>
+      <div class="form__submit">
+        <button type="submit" class="form__submit-button">let's play</button>
+      </div>
+    </div>
+    <div class="pattern">
+      <img src="assets/pattern.png" alt="pattern" class="pattern__img">
+    </div>
+  </div>
+  <div class="game">
+    <div class="stats">
+      <h3 class="stats__title"><i class="fas fa-poll"></i></h3>
+      <p class="stats__field" data-id="player1">player 1:</p>
+      <p class="stats__field" data-id="draws">draws:</p>
+      <p class="stats__field" data-id="player2">player 2:</p>
+    </div>
+    <div class="playground">
+      <div class="playground__queue"></div>
+      <div class="playground__container">
+        <div class="playground__item" data-key="1"></div>
+        <div class="playground__item" data-key="2"></div>
+        <div class="playground__item" data-key="3"></div>
+        <div class="playground__item" data-key="4"></div>
+        <div class="playground__item" data-key="5"></div>
+        <div class="playground__item" data-key="6"></div>
+        <div class="playground__item" data-key="7"></div>
+        <div class="playground__item" data-key="8"></div>
+        <div class="playground__item" data-key="9"></div>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup__info">good job! player 1 won!</h2>
+        <div class="popup__submit">
+          <button class="popup__submit-button">play again</button>
+        </div>
+        <div class="popup__exit"><i class="fas fa-times"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/modules/PlayerData.js"></script>
+  <script src="js/modules/Game.js"></script>
+  <script src="js/modules/Results.js"></script>
+  <script src="js/modules/App.js"></script>
+  <script src="js/modules/main.js"></script>
+</body>
+
+</html>

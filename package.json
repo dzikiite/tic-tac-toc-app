@@ -1,0 +1,28 @@
+{
+  "name": "tictactocapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "eslint": "^6.7.0",
+    "webpack": "^4.41.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzikiite/tic-tac-toc-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzikiite/tic-tac-toc-app/issues"
+  },
+  "homepage": "https://github.com/dzikiite/tic-tac-toc-app#readme"
+}
